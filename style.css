@@ -112,7 +112,7 @@ h2, h3 {
 
 /* Panel CRUD (Derecha) */
 #crud-panel {
-    flex: 0 0 320px;
+    flex: 0 0 0px;
 }
 
 #person-form label {
