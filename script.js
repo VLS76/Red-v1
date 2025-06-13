@@ -2,29 +2,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- DATOS INICIALES ---
     const initialPeopleData = [
-        { id: "Ana García", Especie: ["Ovina", "Caprina"], Tecnología: ["Identificación y monitorización", "Biosensores"], Lineas: ["Salud animal"], Rol: "IP", Institución: "IRTA" },
-        { id: "Beatriz Soler", Especie: ["Ovina"], Tecnología: ["Analisis de imágenes"], Lineas: ["Reproducción y mejora genética"], Rol: "Postdoc", Institución: "IRTA" },
-        { id: "Carlos Ruiz", Especie: ["Caprina"], Tecnología: ["Ciencia de datos", "Biosensores"], Lineas: ["Salud animal", "Comportamiento animal"], Rol: "Predoc", Institución: "IRTA" },
-        { id: "David Jiménez", Especie: ["Vacuna"], Tecnología: ["Automatización y robots", "Posicionamiento y navegación"], Lineas: ["Optimización de recursos"], Rol: "IP", Institución: "UdL/Agrotecnio" },
-        { id: "Elena Navarro", Especie: ["Vacuna", "Porcina"], Tecnología: ["Detección y medición"], Lineas: ["Monitoreo de emisiones"], Rol: "Técnico", Institución: "UdL/Agrotecnio" },
-        { id: "Fernando Moreno", Especie: ["Porcina"], Tecnología: ["Analisis de imágenes", "Ciencia de datos"], Lineas: ["Comportamiento animal"], Rol: "IP", Institución: "CSIC/INIA" },
-        { id: "Gloria Vidal", Especie: ["Avícola"], Tecnología: ["Identificación y monitorización"], Lineas: ["Salud animal"], Rol: "Postdoc", Institución: "NEIKER" },
-        { id: "Héctor Alonso", Especie: ["Cunícula"], Tecnología: ["Biosensores"], Lineas: ["Reproducción y mejora genética"], Rol: "Asesor científico", Institución: "UPV" },
-        { id: "Irene Sánchez", Especie: ["Vacuna"], Tecnología: ["Posicionamiento y navegación"], Lineas: ["Comportamiento animal"], Rol: "Predoc", Institución: "UCO" },
-        { id: "Javier Romero", Especie: ["Ovina", "Porcina"], Tecnología: ["Ciencia de datos"], Lineas: ["Optimización de recursos"], Rol: "IP", Institución: "CICYTEX" },
-        { id: "Laura Martín", Especie: ["Porcina", "Avícola"], Tecnología: ["Automatización y robots"], Lineas: ["Monitoreo de emisiones"], Rol: "Postdoc", Institución: "CICYTEX" },
-        { id: "Miguel Castillo", Especie: ["Caprina"], Tecnología: ["Analisis de imágenes"], Lineas: ["Salud animal"], Rol: "Técnico", Institución: "USAL" },
-        { id: "Nuria Pascual", Especie: ["Vacuna"], Tecnología: ["Identificación y monitorización", "Detección y medición"], Lineas: ["Optimización de recursos"], Rol: "IP", Institución: "UCO" },
-        { id: "Óscar Flores", Especie: ["Avícola"], Tecnología: ["Posicionamiento y navegación"], Lineas: ["Comportamiento animal"], Rol: "Predoc", Institución: "UAB" },
-        { id: "Pilar Ibáñez", Especie: ["Ovina"], Tecnología: ["Ciencia de datos"], Lineas: ["Reproducción y mejora genética"], Rol: "Postdoc", Institución: "CSIC/INIA" }
+        { id: 1, nombre: 'Ana García', especie: ['Ovina', 'Caprina'], dispositivos: ['RFID', 'Collares'], estudio: ['Comportamiento social'], proyectos: ['Project1', 'Project2'], status: 'IP', institucion: 'UPV' },
+        { id: 2, nombre: 'Bruno Soler', especie: ['Ovina'], dispositivos: ['RFID', 'Drones'], estudio: ['Manejo'], proyectos: ['Project1'], status: 'Postdoc', institucion: 'UPV' },
+        { id: 3, nombre: 'Carla Pons', especie: ['Caprina'], dispositivos: ['Collares', 'Cámaras de visión'], estudio: ['Comportamiento social'], proyectos: ['Project2'], status: 'Predoc', institucion: 'UPV' },
+        { id: 4, nombre: 'David Roca', especie: ['Porcina'], dispositivos: ['IA', 'Alimentadores automáticos'], estudio: ['Nutrición'], proyectos: ['Project3'], status: 'IP', institucion: 'UdL' },
+        { id: 5, nombre: 'Elena Ferré', especie: ['Porcina', 'Avícola'], dispositivos: ['Alimentadores automáticos', 'Básculas'], estudio: ['Nutrición'], proyectos: ['Project3'], status: 'Técnico', institucion: 'UdL' },
+        { id: 6, nombre: 'Felipe Sanz', especie: ['Vacuna'], dispositivos: ['Collares', 'Vallados virtuales'], estudio: ['Comportamiento alimenticio'], proyectos: ['Project4'], status: 'IP', institucion: 'UCO' },
+        { id: 7, nombre: 'Gloria Mínguez', especie: ['Vacuna'], dispositivos: ['Collares', 'Sensores de movimiento'], estudio: ['Salud'], proyectos: ['Project4'], status: 'Postdoc', institucion: 'UCO' },
+        { id: 8, nombre: 'Hector Blanes', especie: ['Ovina'], dispositivos: ['Cámaras de visión', 'IA'], estudio: ['Comportamiento social'], proyectos: ['Project2'], status: 'Predoc', institucion: 'USAL' },
+        { id: 9, nombre: 'Irene Jiménez', especie: ['Ovina', 'Cunícula'], dispositivos: ['Sensores acústicos', 'RFID'], estudio: ['Manejo'], proyectos: ['Project2', 'Project4'], status: 'IP', institucion: 'USAL' },
+        { id: 10, nombre: 'Javier Luna', especie: ['Avícola'], dispositivos: ['Básculas', 'Drones'], estudio: ['Nutrición'], proyectos: [], status: 'Técnico', institucion: 'UAB' },
+        { id: 11, nombre: 'Laura Vidal', especie: ['Avícola', 'Porcina'], dispositivos: ['Drones', 'IA'], estudio: ['Manejo'], proyectos: ['Project1', 'Project3'], status: 'IP', institucion: 'UAB' },
+        { id: 12, nombre: 'Marco Rubio', especie: ['Caprina'], dispositivos: ['Sensores de movimiento', 'Vallados virtuales'], estudio: ['Salud'], proyectos: ['Project1'], status: 'Postdoc', institucion: 'UPV' },
+        { id: 13, nombre: 'Nora Casado', especie: ['Porcina'], dispositivos: ['IA', 'Cámaras de visión'], estudio: ['Comportamiento social'], proyectos: ['Project3'], status: 'Predoc', institucion: 'UdL' },
+        { id: 14, nombre: 'Oscar Pardo', especie: ['Vacuna'], dispositivos: ['RFID', 'Básculas'], estudio: ['Nutrición'], proyectos: ['Project4'], status: 'Técnico', institucion: 'UCO' },
+        { id: 15, nombre: 'Paula Navarro', especie: ['Caprina', 'Vacuna'], dispositivos: ['Collares', 'Cámaras de visión'], estudio: ['Comportamiento alimenticio'], proyectos: ['Project1', 'Project4'], status: 'IP', institucion: 'UCO' }
     ];
 
     const filterConfig = {
-        Especie: { indicators: ["Ovina", "Caprina", "Vacuna", "Porcina", "Avícola", "Cunícula"], color: "#ef4444" },
-        Tecnología: { indicators: ["Identificación y monitorización", "Detección y medición", "Biosensores", "Posicionamiento y navegación", "Automatización y robots", "Analisis de imágenes", "Ciencia de datos"], color: "#3b82f6" },
-        Lineas: { indicators: ["Salud animal", "Optimización de recursos", "Comportamiento animal", "Monitoreo de emisiones", "Reproducción y mejora genética"], color: "#10b981" },
-        Rol: { indicators: ["IP", "Postdoc", "Predoc", "Técnico", "Asesor científico"], color: "#f97316" },
-        Institución: { indicators: ["CICYTEX", "CSIC/INIA", "IRTA", "IUCA", "NEIKER", "UAB", "UCO", "UdL/Agrotecnio", "UM", "USAL", "USC/Campus Terra", "UPV"], color: "#8b5cf6" }
+        'Especie': ['Ovina', 'Caprina', 'Vacuna', 'Porcina', 'Avícola', 'Cunícula'],
+        'Dispositivos': ['Drones', 'RFID', 'Collares', 'Cámaras de visión', 'IA', 'Alimentadores automáticos', 'Básculas', 'Sensores acústicos', 'Sensores de movimiento', 'Vallados virtuales'],
+        'Estudio': ['Comportamiento alimenticio', 'Comportamiento social', 'Manejo', 'Nutrición', 'Salud'],
+        'Proyectos': ['Project1', 'Project2', 'Project3', 'Project4'],
+        'Status': ['IP', 'Predoc', 'Postdoc', 'Técnico'],
+        'Institución': ['UPV', 'UdL', 'UCO', 'USAL', 'UAB']
     };
 
     let peopleData = [];
@@ -73,7 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
             filtersContainer.appendChild(filterGroup);
 
             // Crear campos de selección en el formulario CRUD
-            /*
             const formFieldGroup = document.createElement('div');
             let selectHTML = `<label for="form-${key}">${category}:</label><select id="form-${key}" multiple>`;
             options.forEach(option => {
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             formFieldsContainer.appendChild(formFieldGroup);
         }
     }
-    */
+
 
     // --- LÓGICA DE VISUALIZACIÓN DE RED ---
     const networkContainer = document.getElementById('network');
@@ -193,30 +193,30 @@ document.addEventListener('DOMContentLoaded', () => {
         // Lógica de jerarquía IP/Satélite
         const institutionGroups = {};
         filteredPeople.forEach(p => {
-            if (!institutionGroups[p.Institución]) {
-                institutionGroups[p.Institución] = { ip: [], others: [] };
+            if (!institutionGroups[p.institucion]) {
+                institutionGroups[p.institucion] = { ip: [], others: [] };
             }
-            if (p.Rol === 'IP') {
-                institutionGroups[p.Institución].ip.push(p);
+            if (p.status === 'IP') {
+                institutionGroups[p.institucion].ip.push(p);
             } else {
-                institutionGroups[p.Institución].others.push(p);
+                institutionGroups[p.institucion].others.push(p);
             }
         });
 
         filteredPeople.forEach(person => {
             let isSatellite = false;
-            const group = institutionGroups[person.Institución];
-            if (group && group.ip.length > 0 && person.Rol !== 'IP') {
+            const group = institutionGroups[person.institucion];
+            if (group && group.ip.length > 0 && person.status !== 'IP') {
                 isSatellite = true;
             }
 
             nodes.push({
                 id: person.id,
                 label: person.nombre,
-                title: `${person.nombre} (${person.Rol} en ${person.Institución})`,
-                value: person.Rol === 'IP' ? 30 : 15, // Tamaño del nodo
-                mass: person.Rol === 'IP' ? 5 : 1, // 'Peso' para la física
-                color: isSatellite ? '#f4a261' : (person.Rol === 'IP' ? '#e76f51' : '#2a9d8f')
+                title: `${person.nombre} (${person.status} en ${person.institucion})`,
+                value: person.status === 'IP' ? 30 : 15, // Tamaño del nodo
+                mass: person.status === 'IP' ? 5 : 1, // 'Peso' para la física
+                color: isSatellite ? '#f4a261' : (person.status === 'IP' ? '#e76f51' : '#2a9d8f')
             });
         });
 
@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function findCommonality(p1, p2) {
         const common = [];
-        if (p1.Institución === p2.Institución) common.push(p1.Institución);
+        if (p1.institucion === p2.institucion) common.push(p1.institucion);
         
         Object.keys(filterConfig).forEach(cat => {
             const key = cat.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -284,7 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
         infoCard.style.display = 'none';
     }
 
-    /*
+
     // --- LÓGICA DEL FORMULARIO CRUD ---
     const form = document.getElementById('person-form');
     const personIdInput = document.getElementById('person-id');
@@ -389,7 +389,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hidePersonInfo();
         }
     }
-    */
+
 
     // --- INICIALIZACIÓN Y EVENT LISTENERS ---
     loadData();

@@ -110,7 +110,7 @@ h2, h3 {
     color: #888;
 }
 
-/* Panel CRUD (Derecha) 
+/* Panel CRUD (Derecha) */
 #crud-panel {
     flex: 0 0 320px;
 }
@@ -158,7 +158,7 @@ h2, h3 {
     font-weight: bold;
     transition: background-color 0.2s;
 }
-*/
+
 #create-btn { background-color: #28a745; }
 #create-btn:hover { background-color: #218838; }
 #update-btn { background-color: #007bff; }
@@ -167,4 +167,3 @@ h2, h3 {
 #delete-btn:hover { background-color: #c82333; }
 #clear-form-btn { background-color: #6c757d; }
 #clear-form-btn:hover { background-color: #5a6268; }
-
